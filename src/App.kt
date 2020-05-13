@@ -32,6 +32,10 @@ fun lambda() {
     print(sumLambda(1, 2))
 }
 
+fun printTest(str:String?): String? {
+    print(str)
+    return str
+}
 /**
  * 可变变量定义 var <标识符>:<类型> =<初始化值>
  * 不可变变量定义 val，只能赋值一次的变量（java final）<标识符>:<类型> =<初始化值>
@@ -44,7 +48,35 @@ fun main(args: Array<String>) {
     c = 1//明确赋值
     var x = 5
     x += 1
+    //字符串模板
+    var m = 1
+    val model1 = "model var $m"
+    val model2 = "${model1.replace("var", "val")},but now is $m"
+    println(model1)
+    println(model2)
     println("Hello World!")
     vars(1, 2, 3)
     lambda()
+
+    /**
+     * NULL检测机制
+     * Kotlin的空安全设计对于声明可为空的参数，
+     * 在使用时要进行空判断处理，有两种处理方式，
+     * 字段后加!!像Java一样抛出空异常，
+     * 另一种字段后加?可不做处理返回值为 null或配合?:做空判断处理
+     */
+    //类型后面加?表示可为空
+    var age: String? = "23"
+    //如果age为空，抛出空指针异常
+    val ages = age!!.toInt()
+    println(ages)
+    var ages1m = null
+    //如果age为空，不做处理返回 null
+    val ages1 = ages1m?.toInt()
+    println(ages1)
+    //age为空返回-1
+    val ages2 = age?.toInt() ?: -1
+    print("----");
+    println(ages2)
+
 }
