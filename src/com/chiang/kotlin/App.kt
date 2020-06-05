@@ -1,6 +1,12 @@
-package com.chiang.test
+package com.chiang.kotlin
 
-import java.util.*;
+class App {
+    fun print(str: String): String {
+        print(str)
+        return str
+    }
+
+}
 
 fun test() {}
 class Runoob {}
@@ -32,10 +38,11 @@ fun lambda() {
     print(sumLambda(1, 2))
 }
 
-fun printTest(str:String?): String? {
+fun printTest(str: String?): String? {
     print(str)
     return str
 }
+
 /**
  * 可变变量定义 var <标识符>:<类型> =<初始化值>
  * 不可变变量定义 val，只能赋值一次的变量（java final）<标识符>:<类型> =<初始化值>
