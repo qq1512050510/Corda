@@ -85,5 +85,18 @@ fun main(args: Array<String>) {
     val ages2 = age?.toInt() ?: -1
     print("----");
     println(ages2)
+    //[1,2,3]
+    val aList = arrayOf(1,2,3)
+    println(aList.toString())
+    println(aList[0])
+    val bList = Array(3,{i -> i*2 })
+    println(bList.toString())
+    val xList :IntArray = intArrayOf(1,2,3)
+    println(xList.get(0))
+    val text = """
+        |测试
+        |教程
+    """.trimIndent()
+    println(text)
 
 }
