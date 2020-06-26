@@ -93,10 +93,27 @@ fun main(args: Array<String>) {
     println(bList.toString())
     val xList :IntArray = intArrayOf(1,2,3)
     println(xList.get(0))
+    //
     val text = """
         |测试
+        
         |教程
-    """.trimIndent()
+    """.trimMargin()
+        //.trimIndent()
+    //
     println(text)
+    //模板
+    val s = "runoob"
+    val str = "$s.length is ${s.length}"
+    println(str)
 
+    val price = """
+        ${'$'}9.99
+        $9.99
+    """.trimIndent()
+    println(price)
+    val xInt: Int = 1
+    if(xInt in 1..8){
+        println("${xInt}在区间内")
+    }
 }
